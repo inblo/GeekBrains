@@ -1,2 +1,52 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 1: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+//и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+int ReadInt(string text)
+{
+    Console.Write(text);
+    return Convert.ToInt32(Console.ReadLine());
+}
+int[,] GenerateMatrix(int row, int column, int leftRange, int rightRange)
+{   
+    int[,] matrix = new int[row, column];
+    Random rand = new Random();
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            matrix[i, j] = rand.Next(leftRange, rightRange + 1);
+        }
+    }
+
+    return matrix;
+}
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write(matrix[i, j] + "\t");  
+        }
+        Console.WriteLine();
+    }
+}
+void FindXYfromMatrix(int[,] matrix, int x, int y)
+{
+    if (x > matrix.GetLength(0) || y > matrix.GetLength(1)){
+        Console.WriteLine($"Элемента с индексом [{x}, {y}] не существует");
+        
+    }
+    else Console.WriteLine($"Элемент массива = {matrix[x, y]}");
+}
+
+
+int row = ReadInt("Введите количество строк массива: ");
+int column = ReadInt("Введите количество столбцов массива: ");
+int[,] newMatrix = GenerateMatrix(row, column, -9, 10);
+PrintMatrix(newMatrix);
+
+int x = ReadInt("Веедите индекс искомой строки: ");
+int y = ReadInt("Ведите индекс искомого столбца: ");
+FindXYfromMatrix(newMatrix, x, y);
