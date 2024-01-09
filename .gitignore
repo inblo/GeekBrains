@@ -51,6 +51,7 @@ x64/
 .builds
 *.pidb
 *.scc
+*.csproj
 # Visual C++ cache files
 ipch/
 *.aps
