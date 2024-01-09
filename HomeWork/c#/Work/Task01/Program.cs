@@ -39,5 +39,3 @@ int[] myArray = GenerateArray(size, 1, 101);
 Console.Write($"[{string.Join(", ", myArray)}] => ");
 PrintReverseArray(myArray, size - 1);
 Console.WriteLine();
-
-
