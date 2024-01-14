@@ -35,7 +35,7 @@ void PrintArray(string[] array)//Метод приема аргумента в �
     Console.Write($"[{string.Join(", ", array)}]");
 }
 
-string[] ArraySort(string[] array, int stringLength)
+string[] ArraySort(string[] array, int stringLength)// Метод Сортировки искомого значения
 {
     string[] tempArray = new string[0];
     int count = 0;
