@@ -1,0 +1,14 @@
+﻿Console.Write("Введите номер телефона: ");
+double Number = double.Parse(Console.ReadLine());
+double[] array = new double[Number];
+double i = array[0];
+double a = array[1];
+double s = array[2];
+double d = array[3];
+double f = array[4];
+double g = array[5];
+double h = array[6];
+double j = array[7];
+double k = array[8];
+double l = array[9];
+Console.Write("(" + i + a + s + ")" + d + f + g + "-" + h + j + "-" + k + l + ";");
